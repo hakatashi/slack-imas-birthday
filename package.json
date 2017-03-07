@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/hakatashi/slack-yahoo-uranai.git",
   "author": "Koki Takahashi <hakatasiloving@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cheerio": "^0.22.0",
+    "livescript": "^1.5.0",
+    "node-slack": "^0.0.7"
+  }
 }
