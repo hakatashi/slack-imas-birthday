@@ -1,0 +1,8 @@
+{
+  "name": "slack-yahoo-uranai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hakatashi/slack-yahoo-uranai.git",
+  "author": "Koki Takahashi <hakatasiloving@gmail.com>",
+  "license": "MIT"
+}
