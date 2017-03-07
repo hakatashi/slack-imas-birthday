@@ -2,6 +2,10 @@
   "name": "slack-yahoo-uranai",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": "^7.0.0"
+  },
   "scripts": {
     "start": "lsc index.ls"
   },
