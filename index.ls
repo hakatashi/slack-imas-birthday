@@ -51,7 +51,7 @@ axios do
 
   slack.send {
     text: """
-      #{date}のかに座の運勢: *#rank*
+      <https://fortune.yahoo.co.jp/12astro/cancer|#{date}のかに座の運勢>: *#rank*
       #job-text
     """
     attachments
