@@ -42,7 +42,7 @@ axios do
 
   attachments = luckies.map ({name, value}) ->
     [denominator, numerator] = value.match /\d+/g
-    stars = 1 + Math.floor (numerator / denominator) * 5
+    stars = Math.ceil (numerator / denominator) * 5
 
     {
       title: "#name: #value"
