@@ -1,4 +1,6 @@
 require! {
+  'japanese-holidays': {is-holiday-at}
+  'moment-timezone': moment
   'node-slack': Slack
   'iconv-lite'
   axios
@@ -10,6 +12,17 @@ lucky-colors =
   '恋愛運': '#ff1066'
   '金運': '#ff8f11'
   '仕事運': '#002fdb'
+
+today = new Date!
+day = moment!tz 'Asia/Tokyo' .day!
+
+if day in [0 6]
+  console.log "Cancelling execution because it's #{switch day | 0 => 'Sunday' | 6 => 'Saturday'}"
+  return
+
+if today |> is-holiday-at
+  console.log "Cancelling execution because it's #{today |> is-holiday-at}"
+  return
 
 slack = new Slack process.env.SLACK_WEBHOOK
 
