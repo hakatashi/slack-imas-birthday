@@ -1,6 +1,8 @@
 # slack-yahoo-uranai
 
-今日のYahoo占いのかに座:cancer:の運勢をSlackに投稿するやつ
+今日のYahoo占いのかに座:cancer:の運勢をSlackに投稿するやつ。
+
+土日と休日に実行すると停止します。
 
 ![](https://i.imgur.com/tSxKUyU.png)
 
