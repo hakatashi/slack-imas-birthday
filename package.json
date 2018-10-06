@@ -7,18 +7,16 @@
     "node": "^7.0.0"
   },
   "scripts": {
-    "start": "lsc index.ls"
+    "start": "node index.js"
   },
   "repository": "https://github.com/hakatashi/slack-yahoo-uranai.git",
   "author": "Koki Takahashi <hakatasiloving@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.15.3",
-    "cheerio": "^0.22.0",
-    "iconv-lite": "^0.4.15",
-    "japanese-holidays": "^1.0.6",
-    "livescript": "^1.5.0",
-    "moment-timezone": "^0.5.11",
+    "axios": "^0.18.0",
+    "dayjs": "^1.7.7",
+    "dotenv": "^6.0.0",
+    "lodash": "^4.17.11",
     "node-slack": "^0.0.7"
   }
 }
