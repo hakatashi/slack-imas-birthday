@@ -32,7 +32,11 @@ const today = day().format('MM-DD');
 	const idols = get(result, ['data', 'results', 'bindings'], []);
 
 	for (const idol of idols) {
-		const name = get(idol, ['name', 'value'], 'null');
+		const name = get(idol, ['name', 'value']);
+
+		if (!name) {
+			continue;
+		}
 
 		const search = await axios.get(`https://www.googleapis.com/customsearch/v1?${qs.encode({
 			key: process.env.GOOGLE_API_KEY,
