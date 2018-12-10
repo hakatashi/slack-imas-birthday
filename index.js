@@ -14,13 +14,13 @@ const today = day().format('MM-DD');
 	const result = await axios.get(`https://sparql.crssnky.xyz/spql/imas/query?${qs.encode({
 		query: `
 			PREFIX schema: <http://schema.org/>
-			SELECT (SAMPLE(?o) as ?date) (SAMPLE(?n) as ?name)
+			SELECT (SAMPLE(?o) AS ?date) (SAMPLE(?n) AS ?name) (SAMPLE(DISTINCT ?sub) AS ?uri)
 			WHERE {
 				?sub schema:birthDate ?o;
-				schema:name|schema:alternateName ?n;
-				FILTER(REGEX(STR(?o), "${today}" )).
+				schema:alternateName|schema:name ?n;
+				FILTER(REGEX(STR(?o), "${today}")).
 			}
-			GROUP BY (?n)
+			GROUP BY (?sub)
 			ORDER BY (?name)
 		`,
 	})}`, {
