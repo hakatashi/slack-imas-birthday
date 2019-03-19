@@ -52,7 +52,7 @@ const today = day().format('MM-DD');
 		const niconico = `https://www.nicovideo.jp/search/${encodeURIComponent(name)}?sort=f&order=d`;
 
 		slack.send({
-			text: `${day().format('M月D日')}は *${name}* の誕生日です🎉\n<${twitter}|[Twitter検索]> <${pixiv}|[pixiv検索]> <${niconico}|[niconico]>`,
+			text: `${day().format('M月D日')}は *${name}* の誕生日です🎉\n<${twitter}|[Twitter検索]> <${pixiv}|[pixiv検索]> <${niconico}|[niconico検索]>`,
 			attachments: [
 				{
 					image_url: image,
