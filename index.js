@@ -13,11 +13,12 @@ const today = day().format('MM-DD');
 (async () => {
 	const result = await axios.get(`https://sparql.crssnky.xyz/spql/imas/query?${qs.encode({
 		query: `
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 			PREFIX schema: <http://schema.org/>
-			SELECT (SAMPLE(?o) AS ?date) (SAMPLE(?n) AS ?name) (SAMPLE(DISTINCT ?sub) AS ?uri)
+			SELECT (SAMPLE(?o) AS ?date) (SAMPLE(?n) AS ?name)
 			WHERE {
 				?sub schema:birthDate ?o;
-				schema:alternateName|schema:name ?n;
+				rdfs:label ?n;
 				FILTER(REGEX(STR(?o), "${today}")).
 			}
 			GROUP BY (?sub)
