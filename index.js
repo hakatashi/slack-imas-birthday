@@ -2,11 +2,11 @@ require('dotenv').load();
 
 const day = require('dayjs');
 const axios = require('axios');
-const Slack = require('node-slack');
+const {IncomingWebhook} = require('@slack/webhook');
 const qs = require('querystring');
 const get = require('lodash/get');
 
-const slack = new Slack(process.env.SLACK_WEBHOOK_URL);
+const slack = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
 const today = day().format('MM-DD');
 

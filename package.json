@@ -13,10 +13,10 @@
   "author": "Koki Takahashi <hakatasiloving@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@slack/webhook": "^5.0.3",
     "axios": "^0.19.2",
     "dayjs": "^1.8.23",
     "dotenv": "^8.2.0",
-    "lodash": "^4.17.15",
-    "node-slack": "^0.0.7"
+    "lodash": "^4.17.15"
   }
 }
