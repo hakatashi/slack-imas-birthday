@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const day = require('dayjs');
 const axios = require('axios');
-const {IncomingWebhook} = require('@slack/webhook');
+const { IncomingWebhook } = require('@slack/webhook');
 const qs = require('querystring');
 const get = require('lodash/get');
 
@@ -46,8 +46,8 @@ const today = day().format('--MM-DD');
 
 		const image = get(search, ['data', 'items', 0, 'link'], 'http://design-ec.com/d/e_others_50/l_e_others_500.png');
 
-		const twitter = `https://twitter.com/search?${qs.encode({q: name})}`;
-		const pixiv = `https://www.pixiv.net/search.php?${qs.encode({s_mode: 's_tag', word: name})}`;
+		const twitter = `https://twitter.com/search?${qs.encode({ q: name })}`;
+		const pixiv = `https://www.pixiv.net/search.php?${qs.encode({ s_mode: 's_tag', word: name })}`;
 		const niconico = `https://www.nicovideo.jp/search/${encodeURIComponent(name)}?sort=f&order=d`;
 
 		slack.send({

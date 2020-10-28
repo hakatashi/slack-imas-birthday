@@ -9,7 +9,7 @@ const get = require('lodash/get');
 const slack = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
 const nextMonday = day().add(3, 'day').format('--MM-DD');
-const aWeekAgo = nextMonday.add(7, 'day').format('--MM-DD');
+const aWeekAgo = day().add(9, 'day').format('--MM-DD');
 
 (async () => {
 	result = await axios.get(`https://sparql.crssnky.xyz/spql/imas/query?${qs.encode({
