@@ -1,4 +1,4 @@
-require('dotenv').load();
+require('dotenv').config();
 
 const day = require('dayjs');
 const axios = require('axios');
@@ -57,6 +57,7 @@ const today = day().format('--MM-DD');
 					image_url: image,
 				}
 			],
+			channel: process.env.SLACK_WEBHOOK_CHANNEL
 		});
 	}
 })();

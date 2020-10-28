@@ -1,4 +1,4 @@
-require('dotenv').load();
+require('dotenv').config();
 
 const day = require('dayjs');
 const axios = require('axios');
@@ -46,7 +46,11 @@ const aWeekAgo = nextMonday.add(7, 'day').format('--MM-DD');
 
 		idolListStr += `・${name} (${birthday})\n`;
 	}
-	slack.send({
-		text: `お疲れさまです！ 来週が誕生日のアイドルは…\n${idolListStr}です！`
-	});
+
+	if (idolListStr) {
+		slack.send({
+			text: `来週が誕生日のアイドルは…\n${idolListStr}です！`,
+			channel: process.env.SLACK_WEBHOOK_CHANNEL
+		});
+	}
 })();
