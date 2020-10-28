@@ -8,21 +8,19 @@ const get = require('lodash/get');
 
 const slack = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
-const today = day().format('MM-DD');
+const today = day().format('--MM-DD');
 
 (async () => {
 	const result = await axios.get(`https://sparql.crssnky.xyz/spql/imas/query?${qs.encode({
 		query: `
+			PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 			PREFIX schema: <http://schema.org/>
-			SELECT (SAMPLE(?o) AS ?date) (SAMPLE(?n) AS ?name)
+			SELECT ?name
 			WHERE {
-				?sub schema:birthDate ?o;
-				rdfs:label ?n;
-				FILTER(REGEX(STR(?o), "${today}")).
+				?idol schema:birthDate "${today}"^^xsd:gMonthDay;
+				rdfs:label ?name.
 			}
-			GROUP BY (?sub)
-			ORDER BY (?name)
 		`,
 	})}`, {
 		headers: {
