@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@slack/webhook": "^5.0.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dayjs": "^1.8.23",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.21"
